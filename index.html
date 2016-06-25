@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="nl">
+	<head>
+		<meta charset="utf-8">
+		<title>Kaco naar maps</title>
+		<meta name="description" content="Kaco naar maps">
+		<meta name="author" content="Marcel van der Hoek">
+		<link rel="stylesheet" href="style.css"/>
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<form>
+			<input type="number" name="x" id="x" placeholder="103800" min="-7000" max="300000"></input>
+			<input type="number" name="y" id="y" placeholder="438224" min="289000" max="629000"></input>
+			<button id="zoekop">Zoek op!</button>	
+		</form>
+		<div id="kaart"></div>
+ 		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwM5Co4Ya8j2FZ0LVHhUuLFIEj9pZtauk"></script>
+		<script src="js/script.js"></script>
+	</body>
+</html>
+
