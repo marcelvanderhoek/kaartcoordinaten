@@ -12,8 +12,7 @@ var knop = document.getElementById("zoekop");
 function converteerNaarLengteBreedte(x, y) {
     // Converteert Rijksdriehoekscoördinaten naar lengte- en breedtegraden voor Maps
     // Bronfunctie in C#: https://www.roelvanlisdonk.nl/?p=2950
-    var resultaat;
-
+    
     // Gebruik Amersfoort als referentiepunt
     var referentieRdX = 155000;
     var referentieRdY = 463000;
@@ -53,12 +52,10 @@ function converteerNaarLengteBreedte(x, y) {
     var breedte = referentieWgs84X + (somN / 3600);
     var lengte = referentieWgs84Y + (somO / 3600);
 
-    resultaat = {
+    return {
         lat: breedte,
         lng: lengte
     };
-
-    return resultaat;
 }
 
 function initMap(lengteBreedte) {
@@ -69,7 +66,7 @@ function initMap(lengteBreedte) {
 
     var marker = new google.maps.Marker({
         position: lengteBreedte,
-        map: map,
+        map: map
     }); 
 }
 
