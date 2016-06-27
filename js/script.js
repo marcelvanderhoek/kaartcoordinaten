@@ -1,4 +1,4 @@
-(function() {
+var kaCo = (function(window, document, undefined) {
 'use strict';
 
 /**
@@ -17,7 +17,7 @@ var invoer = document.getElementById('invoer');
 var mapdiv = document.getElementById('map');
 
 /**
-* Methods
+* Private methods
 */
 function converteerNaarLengteBreedte(x, y) {
     // Converteert Rijksdriehoekscoördinaten naar lengte- en breedtegraden voor Maps (WGS84)
@@ -84,7 +84,7 @@ function initMap(lengteBreedte) {
 
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(invoer);
     
-    // Wacht met weergeven van invoer tot kaart geladen is
+    // Wacht met weergeven van invoerdiv tot kaart geladen is
     google.maps.event.addListener(map, 'tilesloaded', function() {
         invoer.style.display = 'block';
     });
@@ -121,9 +121,14 @@ function detectBrowser() {
 */
 knop.addEventListener('click', updateLocatie, false);
 
-window.onload = function() {
-    detectBrowser();
-    initMap(standaardLocatie);
+/**
+* Public methods
+*/
+return {
+    callback: function() {
+        detectBrowser();
+        initMap(standaardLocatie);
+    }
 };
 
-}());
+}(window, document));
